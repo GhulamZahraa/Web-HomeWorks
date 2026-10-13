@@ -1,0 +1,54 @@
+﻿@using Web_HomeWork4_1__BootStrap.Models
+
+@model List<Car>
+
+@{
+    ViewData["Title"] = "Booked Cars";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Booked Cars</h2>
+    <a asp-controller="Cars"
+       asp-action="Index"
+       class="btn btn-primary">
+        Back to Cars
+    </a>
+</div>
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-info" role="alert">
+        No cars have been booked yet.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Car Name</th>
+                    <th>Price Per Day</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var car in Model)
+                {
+                    <tr>
+                        <td>@car.Id</td>
+                        <td>@car.Name</td>
+                        <td>
+                            PKR @car.PricePerDay.ToString("N0")
+                        </td>
+                        <td>
+                            <span class="badge bg-warning text-dark">
+                                Booked
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

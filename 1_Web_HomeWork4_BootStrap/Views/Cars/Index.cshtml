@@ -1,0 +1,52 @@
+﻿@using Web_HomeWork4_1__BootStrap.Models
+@model List<Car>
+@{
+    ViewData["Title"] = "Available Cars";
+}
+<h2 class="mb-2">Available Cars</h2>
+<p class="text-muted mb-4">
+    Select a car and click Book Car to reserve it.
+</p>
+@if (Model == null || Model.Count == 0)
+{
+    <div class="alert alert-info" role="alert">
+        No cars are currently available.
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var car in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column p-4">
+                        <h5 class="card-title mb-3">
+                            @car.Name
+                        </h5>
+                        <p class="card-text mb-3">
+                            <strong>Price per day:</strong>
+                            PKR @car.PricePerDay.ToString("N0")
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge bg-success">
+                                Available
+                            </span>
+                        </div>
+                        <form action="/Cars/Book"
+                              method="post"
+                              class="mt-auto">
+                            <input type="hidden"
+                                   name="id"
+                                   value="@car.Id" />
+                            <button type="submit"
+                                    class="btn btn-primary w-100">
+                                Book Car
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

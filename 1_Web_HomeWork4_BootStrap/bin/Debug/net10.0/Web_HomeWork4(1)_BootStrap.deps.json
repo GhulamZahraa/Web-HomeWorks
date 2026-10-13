@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Web_HomeWork4(1)_BootStrap/1.0.0": {
+        "runtime": {
+          "Web_HomeWork4(1)_BootStrap.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Web_HomeWork4(1)_BootStrap/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

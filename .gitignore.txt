@@ -1,0 +1,16 @@
+
+# Secret environment files
+.env
+.env.*
+
+# Allow a sample environment file, if needed
+!.env.example
+
+# Visual Studio generated files
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
